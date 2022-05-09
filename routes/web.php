@@ -27,4 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/category/add', [CategoryController::class, 'index'])->name('show_cate_table');
 Route::post('/category/store', [CategoryController::class, 'store'])->name('cate_store');
 Route::get('/category/manage', [CategoryController::class, 'manage'])->name('manage_cate');
+Route::get('/category/active/{category_id}', [CategoryController::class, 'active'])->name('category_active');
+Route::get('/category/inactive/{category_id}', [CategoryController::class, 'inactive'])->name('inactive_cate');
 Route::get('/category/delete/{category_id}', [CategoryController::class, 'delete'])->name('delete_cate');
+Route::post('/category/update', [CategoryController::class, 'update'])->name('cate_update');
