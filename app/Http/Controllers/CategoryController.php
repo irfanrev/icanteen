@@ -35,4 +35,12 @@ class CategoryController extends Controller
         return view('BackEnd.category.manageCategory', compact('category'));
 
     }
+
+    public function delete($category_id)
+    {
+        $category = category::find($category_id);
+
+        $category->delete();
+        return back();
+    }
 }

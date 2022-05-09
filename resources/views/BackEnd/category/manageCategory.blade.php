@@ -17,7 +17,6 @@
                         <th>SL</th>
                         <th>Category Name</th>
                         <th>Order Number</th>
-                        <th>Created Date</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -28,18 +27,19 @@
                             <td>{{ $i++ }}</td>
                             <td>{{ $cate->category_name }}</td>
                             <td>{{ $cate->order_number }}</td>
-                            <td>{{ $cate->added_on }}</td>
+                            
                             <td>
                                 <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                      More
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        More
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <a class="dropdown-item" href="#">Pending</a>
-                                      <a class="dropdown-item" href="#">Delete</a>
-                                      <a class="dropdown-item" href="#">Active</a>
+                                        <a class="dropdown-item" href="#">Pending</a>
+                                        <a class="dropdown-item" href="{{ route('delete_cate', ['category_id'=>$cate->category_id]) }}">Delete</a>
+                                        
                                     </div>
-                                  </div>
+                                </div>
                             </td>
                         </tr>
                     @endforeach
