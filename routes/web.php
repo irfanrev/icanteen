@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\deliverBoyController;
 use App\Http\Controllers\CouponsController;
+use App\Http\Controllers\DishController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,12 @@ Route::get('/coupon/code/active/{coupon_id}', [couponsController::class, 'code_a
 Route::get('/coupon/code/inactive/{coupon_id}', [couponsController::class, 'code_inactive'])->name('inactive_coupon_code');
 Route::get('/coupon/code/delete/{coupon_id}', [couponsController::class, 'code_delete'])->name('delete_coupon_code');
 Route::post('/coupon/code/update', [couponsController::class, 'code_update'])->name('update_coupon_code');
+
+//Hidangan
+Route::get('/dish/add', [dishController::class, 'index'])->name('show_dish_table');
+Route::post('/dish/store', [dishController::class, 'store_dish'])->name('store_dish_table');
+Route::get('/dish/manage', [dishController::class, 'manage_dish'])->name('manage_dish_table');
+Route::get('/dish/active/{dish_id}', [dishController::class, 'active_dish'])->name('active_dish');
+Route::get('/dish/inactive/{dish_id}', [dishController::class, 'inactive_dish'])->name('inactive_dish');
+Route::get('/dish/delete/{dish_id}', [dishController::class, 'delete_dish'])->name('dish_delete');
+Route::post('/dish/update', [dishController::class, 'update_dish'])->name('update_dish_table');

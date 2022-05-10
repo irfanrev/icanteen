@@ -36,13 +36,13 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('show_cate_table') }}" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-plus-circle nav-icon"></i>
                                 <p>Tambah Ketegori</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('manage_cate') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-edit nav-icon"></i>
                                 <p>Data Kategori</p>
                             </a>
                         </li>
@@ -50,7 +50,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-truck"></i>
                         <p>
                             Kurir
                             <i class="right fas fa-angle-left"></i>
@@ -59,13 +59,13 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('show_deliveryBoy_add_table') }}" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-plus-circle nav-icon"></i>
                                 <p>Tambah Kurir</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('delivery_boy_manage')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-edit nav-icon"></i>
                                 <p>Data Kurir</p>
                             </a>
                         </li>
@@ -73,7 +73,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-ticket-alt"></i>
                         <p>
                             Kode Kupon
                             <i class="right fas fa-angle-left"></i>
@@ -82,14 +82,37 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('show_coupon_table') }}" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-plus-circle nav-icon"></i>
                                 <p>Tambah Kupon</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('manage_coupon_code')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-edit nav-icon"></i>
                                 <p>Data Kupon</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fa fa-bars"></i>
+                        <p>
+                            Hidangan
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('show_dish_table') }}" class="nav-link active">
+                                <i class="fa fa-plus-circle nav-icon"></i>
+                                <p>Tambah Hidangan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('manage_dish_table')}}" class="nav-link">
+                                <i class="fa fa-edit nav-icon"></i>
+                                <p>Data Hidangan</p>
                             </a>
                         </li>
                     </ul>
