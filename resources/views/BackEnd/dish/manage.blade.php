@@ -91,6 +91,31 @@
                                             <img src="{{ asset($dish->dish_image) }}" style="height: 150px; width: 150px; border-radius: 50%" >
                                             <input type="file" name="dish_image" class="form-control" accept="image/*" value="">
                                         </div>
+
+                                        <div class="card">
+                                            <div class="card-header" title="">
+                                                Hidangan Atribut
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="full" value="{{ $dish->full }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="full_price" value="{{ $dish->full_price }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="half" value="{{ $dish->half }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="half_price"
+                                                            value="{{ $dish->half_price }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         
                                         <div class="form-group">
                                             <input type="submit" name="btn" class="btn btn-primary" value="Update">

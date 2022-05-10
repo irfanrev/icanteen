@@ -19,10 +19,6 @@ return new class extends Migration
             $table->integer('order_number');
             $table->integer('category_status');
             $table->dateTime('added_on');
-            $table->string('full')->nullable();
-            $table->float('full_price', 10, 2)->nullable();
-            $table->string('half')->nullable();
-            $table->float('half_price', 10, 2)->nullable();
             $table->timestamps();
         });
     }

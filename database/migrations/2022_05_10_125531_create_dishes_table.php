@@ -21,6 +21,10 @@ return new class extends Migration
             $table->text('dish_image');
             $table->integer('dish_status');
             $table->dateTime('added_on');
+            $table->string('full')->nullable();
+            $table->float('full_price', 10, 2)->nullable();
+            $table->string('half')->nullable();
+            $table->float('half_price', 10, 2)->nullable();
             $table->timestamps();
         });
     }
