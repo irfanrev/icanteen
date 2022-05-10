@@ -71,10 +71,10 @@
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="full_price" placeholder="Enter Price">
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mt-2">
                                     <input type="text" class="form-control" name="half" placeholder="Half">
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mt-2">
                                     <input type="text" class="form-control" name="half_price"
                                         placeholder="Enter 2nd price">
                                 </div>
