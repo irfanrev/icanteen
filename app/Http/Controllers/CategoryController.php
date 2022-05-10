@@ -56,7 +56,8 @@ class CategoryController extends Controller
         $category = category::find($category_id);
 
         $category->delete();
-        return back();
+        
+        return back()->with('sms','Data Kurir Berhasil Dihapus');
     }
     
     public function update(Request $request){

@@ -1,7 +1,7 @@
 @extends('BackEnd.master')
 
 @section('title')
-    IcanTeen Update Data Kategori
+    IcanTeen Update Data Kurir
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
     @endif
     <div class="card my-5">
         <div class="card-header">
-            <h3 class="card-title">Data Kategori</h3>
+            <h3 class="card-title">Data Kurir</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -23,32 +23,34 @@
                 <thead>
                     <tr>
                         <th>SL</th>
-                        <th>Category Name</th>
-                        <th>Order Number</th>
+                        <th>Nama Kurir</th>
+                        <th>Nomor Telepon Kurir</th>
+                        <th>Ditambahkan Pada</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @php($i = 1)
-                    @foreach ($category as $cate)
+                    @foreach ($boys as $boy)
                         <tr>
                             <td>{{ $i++ }}</td>
-                            <td>{{ $cate->category_name }}</td>
-                            <td>{{ $cate->order_number }}</td>
+                            <td>{{ $boy->delivery_boy_name }}</td>
+                            <td>{{ $boy->delivery_boy_phone_number }}</td>
+                            <td>{{ $boy->added_on }}</td>
                             
                             <td>
-                                @if($cate->category_status == 1)
-                                <a class="btn btn-outline-success" href="{{ route('inactive_cate',['category_id'=>$cate->category_id]) }}"><i class="fas fa-arrow-up" title="klik untuk Menonaktifkan"></i></a>
+                                @if($boy->delivery_boy_status==1)
+                                <a class="btn btn-outline-success" href="{{ route('delivery_boy_inactive', ['delivery_boy_id'=>$boy->delivery_boy_id]) }}"><i class="fas fa-arrow-up" title="klik untuk Menonaktifkan"></i></a>
                                 @else
-                                <a class="btn btn-outline-info" href="{{ route('category_active',['category_id'=>$cate->category_id]) }}"><i class="fas fa-arrow-down" title="klik untuk Mengaktifkan"></i></a>
+                                <a class="btn btn-outline-info" href="{{ route('delivery_boy_active', ['delivery_boy_id'=>$boy->delivery_boy_id]) }}"><i class="fas fa-arrow-down" title="klik untuk Mengaktifkan"></i></a>
                                 @endif
-                                <a class="btn btn-outline-dark" data-toggle="modal" data-target="#edit{{ $cate->category_id }}"><i class="fas fa-edit" title="klik untuk Mengubah"></i></a>
-                                <a class="btn btn-outline-danger" href="{{ route('delete_cate', ['category_id'=>$cate->category_id]) }}"> <i class="fas fa-trash" title="klik untuk hapus"></i></a>
+                                <a class="btn btn-outline-dark" data-toggle="modal" data-target="#edit{{ $boy->delivery_boy_id }}"><i class="fas fa-edit" title="klik untuk Mengubah"></i></a>
+                                <a class="btn btn-outline-danger" href="{{ route('delivery_boy_delete', ['delivery_boy_id'=>$boy->delivery_boy_id]) }}"> <i class="fas fa-trash" title="klik untuk hapus"></i></a>
                             </td>
                         </tr>
 
                         <!-- modal -->
-                        <div class="modal fade" id="edit{{ $cate->category_id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="edit{{ $boy->delivery_boy_id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -58,16 +60,16 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="{{ route('cate_update') }}" method="post">
+                                    <form action="{{ route('delivery_boy_update') }}" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <label>Nama Kategori</label>
-                                            <input type="text" class="form-control" name="category_name" value="{{ $cate->category_name }}">
-                                            <input type="hidden" class="form-control" name="category_id" value="{{ $cate->category_id }}">
+                                            <label>Nama Kurir</label>
+                                            <input type="text" class="form-control" name="delivery_boy_name" value="{{ $boy->delivery_boy_name}}">
+                                            <input type="hidden" class="form-control" name="delivery_boy_id" value="{{ $boy->delivery_boy_id}}">
                                         </div>
                                         <div class="form-group">
-                                            <label>Nomor Order</label>
-                                            <input type="number" class="form-control" name="order_number" value="{{ $cate->order_number }}">
+                                            <label>Nomor Handphone Kurir</label>
+                                            <input type="number" class="form-control" name="delivery_boy_phone_number" value="{{ $boy->delivery_boy_phone_number}}">
                                         </div>
                                         <div class="form-group">
                                             <input type="submit" name="btn" class="btn btn-primary" value="Update">
