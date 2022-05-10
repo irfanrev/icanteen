@@ -36,11 +36,36 @@ class CategoryController extends Controller
 
     }
 
+    public function active($category_id){
+        $category = category::find($category_id);
+
+        $category->category_status=1;
+        $category->save();
+        return back();
+    }
+    public function inactive($category_id){
+        $category = category::find($category_id);
+
+        $category->category_status=0;
+        $category->save();
+        return back();
+    }
+    
     public function delete($category_id)
     {
         $category = category::find($category_id);
 
         $category->delete();
-        return back();
+        
+        return back()->with('sms','Data Kurir Berhasil Dihapus');
+    }
+    
+    public function update(Request $request){
+        $category = Category::find($request->category_id);
+        $category->category_name = $request->category_name;
+        $category->order_number = $request->order_number;
+        $category->save();
+
+        return redirect('/category/manage')->with('sms','Kategori Berhasil Diupdate');
     }
 }

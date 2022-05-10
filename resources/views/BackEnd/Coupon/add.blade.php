@@ -1,7 +1,7 @@
 @extends('BackEnd.master')
 
 @section('title')
-    IcanTeen Tambah Data Kategori
+    IcanTeen Tambah Data Kupon
 @endsection
 
 @section('content')
@@ -17,30 +17,45 @@
         <!-- jquery validation -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Tambah Data Kategori <small></small></h3>
+                <h3 class="card-title">Tambah Data Kupon <small></small></h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="POST" action="{{ route('cate_store') }}">
+            <form method="POST" action="{{ route('store_coupun_code') }}">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
-                        <label>Nama Kategori</label>
-                        <input type="text" name="category_name" class="form-control">
+                        <label>Kode Kupon</label>
+                        <input type="text" name="coupon_code" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Nomor Pesanan</label>
-                        <input type="text" name="order_number" class="form-control">
+                        <label>Nilai Kupon</label>
+                        <input type="text" name="coupon_value" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Transaksi Minimal</label>
+                        <input type="text" name="cart_min_value" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Tangal Berakhir</label>
+                        <input type="date" name="expired_on" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Ditambahkan Pada</label>
                         <input type="date" name="added_on" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Status Kategori</label>
+                        <label>Tipe Kupon</label>
                         <div class="radio">
-                            <input type="radio" name="category_status" value="1">Aktif
-                            <input type="radio" name="category_status" value="0">Tidak Aktif
+                            <input type="radio" name="coupon_type" value="1">Percentage
+                            <input type="radio" name="coupon_type" value="0">Fixed
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Status Kupon</label>
+                        <div class="radio">
+                            <input type="radio" name="coupon_status" value="1">Aktif
+                            <input type="radio" name="coupon_status" value="0">Tidak Aktif
                         </div>
                     </div>
                 </div>

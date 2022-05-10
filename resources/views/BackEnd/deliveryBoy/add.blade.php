@@ -1,7 +1,7 @@
 @extends('BackEnd.master')
 
 @section('title')
-    IcanTeen Tambah Data Kategori
+    IcanTeen Tambah Data Kurir
 @endsection
 
 @section('content')
@@ -17,36 +17,40 @@
         <!-- jquery validation -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Tambah Data Kategori <small></small></h3>
+                <h3 class="card-title">Tambah Data Kurir <small></small></h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="POST" action="{{ route('cate_store') }}">
+            <form method="POST" action="{{ route('delivery_store')}}">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
-                        <label>Nama Kategori</label>
-                        <input type="text" name="category_name" class="form-control">
+                        <label>Nama Kurir</label>
+                        <input type="text" name="delivery_boy_name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Nomor Pesanan</label>
-                        <input type="text" name="order_number" class="form-control">
+                        <label>Nomor Handphone Kurir</label>
+                        <input type="text" name="delivery_boy_phone_number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Password Kurir</label>
+                        <input type="text" name="delivery_boy_password" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Ditambahkan Pada</label>
                         <input type="date" name="added_on" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Status Kategori</label>
+                        <label>Status Kurir</label>
                         <div class="radio">
-                            <input type="radio" name="category_status" value="1">Aktif
-                            <input type="radio" name="category_status" value="0">Tidak Aktif
+                            <input type="radio" name="delivery_boy_status" value="1">Aktif
+                            <input type="radio" name="delivery_boy_status" value="0">Tidak Aktif
                         </div>
                     </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Tambah Kategori</button>
+                    <button type="submit" class="btn btn-primary">Tambah Kurir</button>
                 </div>
             </form>
         </div>
