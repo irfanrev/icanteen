@@ -93,7 +93,7 @@
                                         </div>
 
                                         <div class="card">
-                                            <div class="card-header" title="">
+                                            <div class="card-header">
                                                 Hidangan Atribut
                                             </div>
                                             <div class="card-body">
@@ -118,7 +118,7 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                            <input type="submit" name="btn" class="btn btn-primary" value="Update">
+                                            <input type="submit" name="btn" class="btn btn-outline-primary btn-block" value="Update">
                                         </div>
                                     </form>
                                 </div>
