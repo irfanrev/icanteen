@@ -81,6 +81,7 @@ class DishController extends Controller
             $dish->category_id = $request->category_id;
             $dish->dish_detail = $request->dish_detail;
             $dish->dish_image = $imgUrl;
+            
         }
         else{
             $dish->dish_name = $request->dish_name;
