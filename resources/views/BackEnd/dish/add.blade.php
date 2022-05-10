@@ -7,12 +7,12 @@
 @section('content')
     <div class="col-md-5 my-lg-5 offset-3">
         @if (Session::get('sms'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{ Session::get('sms') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ Session::get('sms') }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         @endif
         <!-- jquery validation -->
         <div class="card card-primary">
@@ -21,7 +21,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="POST" action="{{ route('store_dish_table')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('store_dish_table') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -32,9 +32,9 @@
                         <label>----Pilih Kategori----</label>
                         <select name="category_id" class="form-control">
                             <option>----Select Kategori----</option>
-                                @foreach($categories as $cate)
-                                    <option value="{{ $cate->category_id }}">{{ $cate->category_name }}</option>
-                                @endforeach
+                            @foreach ($categories as $cate)
+                                <option value="{{ $cate->category_id }}">{{ $cate->category_name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label>Foto Hidangan</label>
-                        <input type="file" name="dish_image" class="form-control" accept="image/*" >
+                        <input type="file" name="dish_image" class="form-control" accept="image/*">
                     </div>
                     <div class="form-group">
                         <label>Status Hidangan</label>
@@ -55,6 +55,31 @@
                     <div class="form-group">
                         <label>Ditambahkan Pada</label>
                         <input type="date" name="added_on" class="form-control">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" title="">
+                        Hidangan Atribut
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="full" placeholder="Full">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="full_price" placeholder="Enter Price">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="half" placeholder="Half">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="half_price"
+                                        placeholder="Enter 2nd price">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- /.card-body -->
