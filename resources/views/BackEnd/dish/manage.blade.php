@@ -64,7 +64,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="{{ route('update_dish_table') }}" method="post">
+                                    <form action="{{ route('update_dish_table') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <label>Nama Hidangan</label>
@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Kategori Sebelumnya</label>
-                                            <input type="text" class="form-control" value="{{$dish->category_name}}">
+                                            <input type="text" class="form-control" value="{{$dish->category_name}}" >
                                             <label>----Pilih Kategori----</label>
                                             <select name="category_id" class="form-control">
                                                 <option>----Select Kategori----</option>
@@ -84,12 +84,12 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Detail Hidangan</label>
-                                            <textarea type="text" class="form-control" name="dish_detail" value="{{ $dish->dish_detail}}"></textarea>
+                                            <textarea type="text" class="form-control" name="dish_detail" value="{{ $dish->dish_detail }}">{{ $dish->dish_detail }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Foto Sebelumnya</label>
                                             <img src="{{ asset($dish->dish_image) }}" style="height: 150px; width: 150px; border-radius: 50%" >
-                                            <input type="file" name="dish_image" class="form-control" accept="image/*" >
+                                            <input type="file" name="dish_image" class="form-control" accept="image/*" value="">
                                         </div>
                                         
                                         <div class="form-group">
