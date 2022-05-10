@@ -48,7 +48,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview menu-open">
+                <li class="nav-item has-treeview">
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -67,6 +67,29 @@
                             <a href="{{ route('delivery_boy_manage')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Kurir</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Kode Kupon
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('show_coupon_table') }}" class="nav-link active">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Tambah Kupon</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('manage_coupon_code')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Kupon</p>
                             </a>
                         </li>
                     </ul>

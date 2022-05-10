@@ -4,6 +4,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\deliverBoyController;
+use App\Http\Controllers\CouponsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,11 @@ Route::get('/delivery/boy/inactive/{delivery_boy_id}', [deliverBoyController::cl
 Route::get('/delivery/boy/active/{delivery_boy_id}', [deliverBoyController::class, 'boy_active'])->name('delivery_boy_active');
 Route::post('/delivery/boy/update', [deliverBoyController::class, 'boy_update'])->name('delivery_boy_update');
 
+// Kupon
+Route::get('/coupon/code/add', [couponsController::class, 'index'])->name('show_coupon_table');
+Route::post('/coupon/code/store', [couponsController::class, 'code_store'])->name('store_coupun_code');
+Route::get('/coupon/code/manage', [couponsController::class, 'code_manage'])->name('manage_coupon_code');
+Route::get('/coupon/code/active/{coupon_id}', [couponsController::class, 'code_active'])->name('active_coupon_code');
+Route::get('/coupon/code/inactive/{coupon_id}', [couponsController::class, 'code_inactive'])->name('inactive_coupon_code');
+Route::get('/coupon/code/delete/{coupon_id}', [couponsController::class, 'code_delete'])->name('delete_coupon_code');
+Route::post('/coupon/code/update', [couponsController::class, 'code_update'])->name('update_coupon_code');

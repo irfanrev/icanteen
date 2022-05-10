@@ -17,7 +17,7 @@
         <!-- jquery validation -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Add New Category <small></small></h3>
+                <h3 class="card-title">Tambah Data Kategori <small></small></h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -40,7 +40,7 @@
                         <label>Status Kategori</label>
                         <div class="radio">
                             <input type="radio" name="category_status" value="1">Aktif
-                            <input type="radio" name="category_status" value="2">Tidak Aktif
+                            <input type="radio" name="category_status" value="0">Tidak Aktif
                         </div>
                     </div>
                 </div>
