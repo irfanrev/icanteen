@@ -76,3 +76,60 @@ VS Code, Xampp, Browser
 1. Cahya Diantoni (2010631170060)
 2. Irfan Maulana (2010631170013)
 3. Fathimatuz Zahra (2010631170009)
+
+## Struktur Folder
+
+icateeen
+
+- app
+    - console
+    - Exception
+    - Http
+        - Controllers
+        - Middleware
+        - Kernel.php
+    - Models
+        - category.php
+        - coupons.php
+        - Delivery_boy.php
+        - dish.php
+        - User.php
+    - Providers
+- bootstrap
+    - cache
+    - app.php
+- config
+- database
+    - factories
+    - migrations
+    - seeders
+    - .gitignore
+- lang/en
+- public
+    - BackEndResourceFile
+    - BackEndSoureFile
+    - css
+    - js
+- resources
+    - css
+    - js
+    - sass
+    - views
+        - auth
+        - BackEnd
+        - layouts
+        - home.blade.php
+        - welcome.blade.php
+- routes
+    - api.php
+    - channels.php
+    - console.php
+    - web.php
+- storage
+- test
+- vendor
+- .env
+- artisan
+- composer.json
+- webpack.mx.js
+
