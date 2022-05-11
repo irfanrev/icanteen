@@ -47,6 +47,9 @@ db_icanteen
     -   name
     -   email
     -   password
+    
+## Screenshoot
+![WhatsApp Image 2022-05-11 at 13 55 57](https://user-images.githubusercontent.com/60175377/167790677-2a75e3b4-5781-49c9-b9d7-467d373721d9.jpeg)
 
 ## Installation
 
@@ -131,5 +134,7 @@ icateeen
 - .env
 - artisan
 - composer.json
+
+
 - webpack.mx.js
 
